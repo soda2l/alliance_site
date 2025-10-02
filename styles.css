@@ -224,14 +224,6 @@ body {
 
 /* Адаптивность */
 @media (max-width: 768px) {
-    .desktop-only {
-        display: none;
-    }
-    
-    .mobile-only {
-        display: block;
-    }
-    
     .hamburger {
         display: flex;
     }
@@ -392,6 +384,17 @@ body.dark-theme .image-container {
 
 .desktop-only {
     display: block;
+}
+
+/* Показываем мобильные элементы на мобильных устройствах */
+@media (max-width: 768px) {
+    .mobile-only {
+        display: block;
+    }
+    
+    .desktop-only {
+        display: none;
+    }
 }
 
 /* Гамбургер-кнопка */
