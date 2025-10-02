@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Образовательный центр</title>
+    <link rel="stylesheet" href="styles.css?v=20">
+    <link href="https://fonts.googleapis.com/css2?family=Geometria:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Навигационная панель -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Место для логотипа -->
+            <div class="logo-placeholder">
+                <div class="logo-text">ЛОГОТИП</div>
+            </div>
+            
+            <!-- Навигационное меню -->
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Главная</a></li>
+                <li><a href="services.html" class="nav-link">Наши услуги</a></li>
+                <li><a href="investigation.html" class="nav-link">Расследование несчастных случаев</a></li>
+                <li><a href="information.html" class="nav-link">Информация</a></li>
+                <li><a href="cooperation.html" class="nav-link">Для сотрудничества</a></li>
+                <li><a href="personal.html" class="nav-link">Личный кабинет</a></li>
+            </ul>
+            
+            <!-- Переключатель темы (десктоп) -->
+            <button class="theme-toggle desktop-only" id="themeToggle">
+                <span class="theme-icon moon-icon"></span>
+            </button>
+            
+            <!-- Гамбургер-кнопка (мобильная) -->
+            <button class="hamburger mobile-only" id="hamburgerToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <!-- Переключатель темы (мобильный) -->
+            <div class="mobile-theme-toggle">
+                <button class="theme-toggle mobile" id="mobileThemeToggle">
+                    <span class="theme-icon moon-icon"></span>
+                </button>
+            </div>
+            
+            <!-- Навигационное меню (мобильное) -->
+            <ul class="mobile-nav-menu">
+                <li><a href="index.html" class="mobile-nav-link active">Главная</a></li>
+                <li><a href="services.html" class="mobile-nav-link">Наши услуги</a></li>
+                <li><a href="investigation.html" class="mobile-nav-link">Расследование несчастных случаев</a></li>
+                <li><a href="information.html" class="mobile-nav-link">Информация</a></li>
+                <li><a href="cooperation.html" class="mobile-nav-link">Для сотрудничества</a></li>
+                <li><a href="personal.html" class="mobile-nav-link">Личный кабинет</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Главное содержимое -->
+    <main class="main-content">
+        <!-- Главное изображение -->
+        <section class="hero-image">
+            <div class="image-container">
+                <img src="images/2.jpg" alt="Главное изображение" class="main-image">
+                <div class="image-overlay">
+                    <div class="hero-text">
+                        <h1 class="main-title">
+                            ОБУЧЕНИЕ<br>
+                            ПО ОХРАНЕ ТРУДА<br>
+                            И ТЕХНИКЕ БЕЗОПАСНОСТИ
+                        </h1>
+                        <p class="subtitle">с минимальным отрывом от работы</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script>
+        // Применяем тему сразу при загрузке страницы
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+            }
+        })();
+        
+        // Переключение темы
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('themeToggle');
+            const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+            const body = document.body;
+            
+            function toggleTheme() {
+                body.classList.toggle('dark-theme');
+                
+                if (body.classList.contains('dark-theme')) {
+                    localStorage.setItem('theme', 'dark');
+                    console.log('Switched to dark theme');
+                } else {
+                    localStorage.setItem('theme', 'light');
+                    console.log('Switched to light theme');
+                }
+            }
+            
+            if (themeToggle) {
+                themeToggle.addEventListener('click', toggleTheme);
+            }
+            
+            if (mobileThemeToggle) {
+                mobileThemeToggle.addEventListener('click', toggleTheme);
+            }
+            
+            // Мобильное меню
+            const hamburgerToggle = document.getElementById('hamburgerToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (hamburgerToggle && mobileMenu) {
+                hamburgerToggle.addEventListener('click', () => {
+                    hamburgerToggle.classList.toggle('active');
+                    mobileMenu.classList.toggle('active');
+                });
+                
+                // Закрытие меню при клике на ссылку
+                const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburgerToggle.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
