@@ -484,7 +484,7 @@ body.dark-theme .image-container {
 }
 
 .mobile-theme-toggle {
-    text-align: center;
+    text-align: right;
     margin-bottom: 30px;
     padding-bottom: 20px;
     border-bottom: 1px solid #e0e0e0;
@@ -494,6 +494,7 @@ body.dark-theme .image-container {
     list-style: none;
     padding: 0;
     margin: 0;
+    text-align: left;
 }
 
 .mobile-nav-menu li {
