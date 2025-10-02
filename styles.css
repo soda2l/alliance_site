@@ -485,10 +485,12 @@ body.dark-theme .image-container {
 }
 
 .mobile-theme-toggle {
-    text-align: right;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #e0e0e0;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    margin: 0;
+    padding: 0;
+    border: none;
 }
 
 .mobile-nav-menu {
@@ -548,7 +550,4 @@ body.dark-theme .mobile-nav-link.active {
     color: #FF4F00;
 }
 
-body.dark-theme .mobile-theme-toggle {
-    border-bottom-color: #555555;
-}
 
