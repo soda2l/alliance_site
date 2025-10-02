@@ -17,12 +17,11 @@ body {
 /* Навигационная панель */
 .navbar {
     background-color: #ffffff;
-    padding: 30px 0;
+    padding: 20px 0;
     position: sticky;
     top: 0;
     z-index: 100;
     transition: background-color 0.3s ease;
-    min-height: 60px;
 }
 
 .nav-container {
@@ -237,8 +236,9 @@ body {
     }
     
     .navbar {
-        padding: 15px 0;
+        padding: 30px 0;
         height: auto;
+        min-height: 60px;
     }
     
     .nav-container {
