@@ -224,10 +224,6 @@ body {
 
 /* Адаптивность */
 @media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-    
     .theme-toggle.mobile {
         display: flex;
         width: 36px;
@@ -397,6 +393,17 @@ body.dark-theme .image-container {
     }
 }
 
+/* Показываем десктопные элементы на больших экранах */
+@media (min-width: 769px) {
+    .desktop-only {
+        display: block;
+    }
+    
+    .mobile-only {
+        display: none;
+    }
+}
+
 /* Гамбургер-кнопка */
 .hamburger {
     display: none;
@@ -407,6 +414,13 @@ body.dark-theme .image-container {
     padding: 8px;
     margin-right: 20px;
     z-index: 1001;
+}
+
+/* Показываем гамбургер кнопку на мобильных устройствах */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
 }
 
 .hamburger span {
