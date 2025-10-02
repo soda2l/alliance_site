@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Образовательный центр</title>
-    <link rel="stylesheet" href="styles.css?v=33">
+    <link rel="stylesheet" href="styles.css?v=34">
     <link href="https://fonts.googleapis.com/css2?family=Geometria:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -44,6 +44,9 @@
     <!-- Мобильное меню -->
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-content">
+            <!-- Кнопка закрытия -->
+            <button class="mobile-menu-close" id="mobileMenuClose">×</button>
+            
             <!-- Переключатель темы (мобильный) -->
             <div class="mobile-theme-toggle">
                 <button class="theme-toggle mobile" id="mobileThemeToggle">
@@ -121,6 +124,12 @@
             // Мобильное меню
             const hamburgerToggle = document.getElementById('hamburgerToggle');
             const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuClose = document.getElementById('mobileMenuClose');
+            
+            function closeMobileMenu() {
+                hamburgerToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
             
             if (hamburgerToggle && mobileMenu) {
                 hamburgerToggle.addEventListener('click', () => {
@@ -128,13 +137,22 @@
                     mobileMenu.classList.toggle('active');
                 });
                 
+                // Закрытие меню при клике на кнопку закрытия
+                if (mobileMenuClose) {
+                    mobileMenuClose.addEventListener('click', closeMobileMenu);
+                }
+                
                 // Закрытие меню при клике на ссылку
                 const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
                 mobileNavLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        hamburgerToggle.classList.remove('active');
-                        mobileMenu.classList.remove('active');
-                    });
+                    link.addEventListener('click', closeMobileMenu);
+                });
+                
+                // Закрытие меню при клике вне его
+                mobileMenu.addEventListener('click', (e) => {
+                    if (e.target === mobileMenu) {
+                        closeMobileMenu();
+                    }
                 });
             }
         });

@@ -253,8 +253,8 @@ body {
     }
     
     .hamburger {
-        flex: 1;
-        justify-content: flex-end;
+        margin-left: auto;
+        order: 2;
     }
     
     .hero-image {
@@ -463,6 +463,24 @@ body.dark-theme .image-container {
 
 .mobile-menu-content {
     padding: 80px 20px 20px 20px;
+    position: relative;
+}
+
+.mobile-menu-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #000000;
+    z-index: 1002;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .mobile-theme-toggle {
@@ -514,6 +532,10 @@ body.dark-theme .hamburger span {
 }
 
 body.dark-theme .mobile-nav-link {
+    color: #ffffff;
+}
+
+body.dark-theme .mobile-menu-close {
     color: #ffffff;
 }
 
