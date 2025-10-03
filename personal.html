@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет - Образовательный центр</title>
+    <link rel="stylesheet" href="styles.css?v=45">
+    <link href="https://fonts.googleapis.com/css2?family=Geometria:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Навигационная панель -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Место для логотипа -->
+            <div class="logo-placeholder">
+                <div class="logo-text">ЛОГОТИП</div>
+            </div>
+            
+            <!-- Навигационное меню -->
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Главная</a></li>
+                <li><a href="services.html" class="nav-link">Наши услуги</a></li>
+                <li><a href="investigation.html" class="nav-link">Расследование несчастных случаев</a></li>
+                <li><a href="information.html" class="nav-link">Информация</a></li>
+                <li><a href="cooperation.html" class="nav-link">Для сотрудничества</a></li>
+                <li><a href="personal.html" class="nav-link active">Личный кабинет</a></li>
+            </ul>
+            
+            <!-- Переключатель темы (десктоп) -->
+            <button class="theme-toggle desktop-only" id="themeToggle">
+                <span class="theme-icon moon-icon"></span>
+            </button>
+            
+            <!-- Гамбургер-кнопка (мобильная) -->
+            <button class="hamburger mobile-only" id="hamburgerToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <!-- Кнопка закрытия -->
+            <button class="mobile-menu-close" id="mobileMenuClose">×</button>
+            
+            <!-- Переключатель темы (мобильный) -->
+            <div class="mobile-theme-toggle">
+                <button class="theme-toggle mobile" id="mobileThemeToggle">
+                    <span class="theme-icon moon-icon"></span>
+                </button>
+            </div>
+            
+            <!-- Навигационное меню (мобильное) -->
+            <ul class="mobile-nav-menu">
+                <li><a href="index.html" class="mobile-nav-link">Главная</a></li>
+                <li><a href="services.html" class="mobile-nav-link">Наши услуги</a></li>
+                <li><a href="investigation.html" class="mobile-nav-link">Расследование несчастных случаев</a></li>
+                <li><a href="information.html" class="mobile-nav-link">Информация</a></li>
+                <li><a href="cooperation.html" class="mobile-nav-link">Для сотрудничества</a></li>
+                <li><a href="personal.html" class="mobile-nav-link active">Личный кабинет</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Главное содержимое -->
+    <main class="main-content">
+        <div class="personal-container">
+            <!-- Переключатель типа пользователя -->
+            <div class="user-type-toggle">
+                <button class="toggle-btn active" data-type="user">Пользователь</button>
+                <button class="toggle-btn" data-type="admin">Администрация</button>
+            </div>
+
+            <!-- Форма входа/регистрации -->
+            <div class="auth-container">
+                <div class="auth-form-container">
+                    <!-- Заголовок формы -->
+                    <div class="auth-header">
+                        <h2 class="auth-title" id="authTitle">Вход в систему</h2>
+                        <p class="auth-subtitle" id="authSubtitle">Войдите в свой аккаунт</p>
+                    </div>
+
+                    <!-- Форма входа -->
+                    <form class="auth-form" id="loginForm">
+                        <div class="form-group">
+                            <label for="loginEmail">Email</label>
+                            <input type="email" id="loginEmail" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Пароль</label>
+                            <input type="password" id="loginPassword" name="password" required>
+                        </div>
+                        <div class="form-options">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="rememberMe">
+                                <span class="checkmark"></span>
+                                Запомнить меня
+                            </label>
+                            <a href="#" class="forgot-password">Забыли пароль?</a>
+                        </div>
+                        <button type="submit" class="auth-btn">Войти</button>
+                    </form>
+
+                    <!-- Форма регистрации -->
+                    <form class="auth-form hidden" id="registerForm">
+                        <div class="form-group">
+                            <label for="registerName">Имя</label>
+                            <input type="text" id="registerName" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerEmail">Email</label>
+                            <input type="email" id="registerEmail" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerPassword">Пароль</label>
+                            <input type="password" id="registerPassword" name="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Подтвердите пароль</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        </div>
+                        <div class="form-options">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="agreeTerms" required>
+                                <span class="checkmark"></span>
+                                Согласен с <a href="#" class="terms-link">условиями использования</a>
+                            </label>
+                        </div>
+                        <button type="submit" class="auth-btn">Зарегистрироваться</button>
+                    </form>
+
+                    <!-- Переключатель между входом и регистрацией -->
+                    <div class="auth-switch">
+                        <button class="switch-btn" id="switchBtn">Зарегистрироваться</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        // Применяем тему сразу при загрузке страницы
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+            }
+        })();
+        
+        // Переключение темы
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('themeToggle');
+            const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+            const body = document.body;
+            
+            function toggleTheme() {
+                body.classList.toggle('dark-theme');
+                
+                if (body.classList.contains('dark-theme')) {
+                    localStorage.setItem('theme', 'dark');
+                    console.log('Switched to dark theme');
+                } else {
+                    localStorage.setItem('theme', 'light');
+                    console.log('Switched to light theme');
+                }
+            }
+            
+            if (themeToggle) {
+                themeToggle.addEventListener('click', toggleTheme);
+            }
+            
+            if (mobileThemeToggle) {
+                mobileThemeToggle.addEventListener('click', toggleTheme);
+            }
+            
+            // Мобильное меню
+            const hamburgerToggle = document.getElementById('hamburgerToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuClose = document.getElementById('mobileMenuClose');
+            
+            function closeMobileMenu() {
+                hamburgerToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+            
+            if (hamburgerToggle && mobileMenu) {
+                hamburgerToggle.addEventListener('click', () => {
+                    hamburgerToggle.classList.toggle('active');
+                    mobileMenu.classList.toggle('active');
+                });
+                
+                if (mobileMenuClose) {
+                    mobileMenuClose.addEventListener('click', closeMobileMenu);
+                }
+                
+                const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', closeMobileMenu);
+                });
+                
+                mobileMenu.addEventListener('click', (e) => {
+                    if (e.target === mobileMenu) {
+                        closeMobileMenu();
+                    }
+                });
+            }
+
+            // Переключение типа пользователя
+            const toggleButtons = document.querySelectorAll('.toggle-btn');
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    toggleButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    const userType = button.dataset.type;
+                    updateFormForUserType(userType);
+                });
+            });
+
+            // Переключение между входом и регистрацией
+            const switchBtn = document.getElementById('switchBtn');
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            const authTitle = document.getElementById('authTitle');
+            const authSubtitle = document.getElementById('authSubtitle');
+            
+            let isLoginMode = true;
+            
+            switchBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                isLoginMode = !isLoginMode;
+                
+                if (isLoginMode) {
+                    loginForm.classList.remove('hidden');
+                    registerForm.classList.add('hidden');
+                    authTitle.textContent = 'Вход в систему';
+                    authSubtitle.textContent = 'Войдите в свой аккаунт';
+                    switchBtn.textContent = 'Зарегистрироваться';
+                } else {
+                    loginForm.classList.add('hidden');
+                    registerForm.classList.remove('hidden');
+                    authTitle.textContent = 'Регистрация';
+                    authSubtitle.textContent = 'Создайте новый аккаунт';
+                    switchBtn.textContent = 'Войти';
+                }
+            });
+
+            // Обработка форм
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const formData = new FormData(loginForm);
+                const userType = document.querySelector('.toggle-btn.active').dataset.type;
+                
+                console.log('Login attempt:', {
+                    email: formData.get('email'),
+                    password: formData.get('password'),
+                    userType: userType,
+                    rememberMe: document.getElementById('rememberMe').checked
+                });
+                
+                // Здесь будет логика входа
+                alert(`Вход выполнен как ${userType === 'admin' ? 'администратор' : 'пользователь'}`);
+            });
+
+            registerForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const formData = new FormData(registerForm);
+                const userType = document.querySelector('.toggle-btn.active').dataset.type;
+                
+                if (formData.get('password') !== formData.get('confirmPassword')) {
+                    alert('Пароли не совпадают');
+                    return;
+                }
+                
+                console.log('Registration attempt:', {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    password: formData.get('password'),
+                    userType: userType
+                });
+                
+                // Здесь будет логика регистрации
+                alert(`Регистрация выполнена как ${userType === 'admin' ? 'администратор' : 'пользователь'}`);
+            });
+
+            function updateFormForUserType(userType) {
+                // Обновляем текст в зависимости от типа пользователя
+                if (userType === 'admin') {
+                    if (isLoginMode) {
+                        authSubtitle.textContent = 'Войдите в панель администратора';
+                    } else {
+                        authSubtitle.textContent = 'Создайте аккаунт администратора';
+                    }
+                } else {
+                    if (isLoginMode) {
+                        authSubtitle.textContent = 'Войдите в свой аккаунт';
+                    } else {
+                        authSubtitle.textContent = 'Создайте новый аккаунт';
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

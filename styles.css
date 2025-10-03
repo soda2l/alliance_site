@@ -550,4 +550,495 @@ body.dark-theme .mobile-nav-link.active {
     color: #FF4F00;
 }
 
+/* Стили для страницы личного кабинета */
+.personal-container {
+    min-height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    margin: 0 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/1.jpg');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3), 0 0 60px rgba(0, 0, 0, 0.2);
+}
+
+/* Переключатель типа пользователя */
+.user-type-toggle {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 0;
+    padding: 3px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-btn {
+    padding: 8px 16px;
+    border: none;
+    background: transparent;
+    color: #666666;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.toggle-btn.active {
+    background-color: #FF4F00;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(255, 79, 0, 0.3);
+}
+
+.toggle-btn:hover:not(.active) {
+    color: #FF4F00;
+    background-color: rgba(255, 79, 0, 0.1);
+}
+
+/* Контейнер формы авторизации */
+.auth-container {
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    justify-content: center;
+}
+
+.auth-form-container {
+    background-color: #ffffff;
+    border-radius: 0;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.4s ease-out;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.auth-form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #FF4F00, #FF6B35, #FF4F00);
+}
+
+/* Заголовок формы */
+.auth-header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.auth-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #333333;
+    margin: 0 0 4px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.auth-subtitle {
+    font-family: 'Geometria', sans-serif;
+    font-size: 12px;
+    color: #666666;
+    margin: 0;
+    font-weight: 400;
+}
+
+/* Форма */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input {
+    padding: 8px 12px;
+    border: 2px solid #e1e5e9;
+    border-radius: 0;
+    font-family: 'Geometria', sans-serif;
+    font-size: 13px;
+    color: #333333;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #FF4F00;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(255, 79, 0, 0.1);
+}
+
+.form-group input::placeholder {
+    color: #999999;
+}
+
+/* Опции формы */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4px 0;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'Geometria', sans-serif;
+    font-size: 12px;
+    color: #666666;
+    white-space: nowrap;
+}
+
+.checkbox-container input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 14px;
+    height: 14px;
+    border: 2px solid #e1e5e9;
+    border-radius: 0;
+    margin-right: 6px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.checkbox-container input[type="checkbox"]:checked + .checkmark {
+    background-color: #FF4F00;
+    border-color: #FF4F00;
+}
+
+.checkbox-container input[type="checkbox"]:checked + .checkmark::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.forgot-password {
+    color: #FF4F00;
+    text-decoration: none;
+    font-family: 'Geometria', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: #e63e00;
+    text-decoration: underline;
+}
+
+.terms-link {
+    color: #FF4F00;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.terms-link:hover {
+    text-decoration: underline;
+}
+
+/* Кнопка авторизации */
+.auth-btn {
+    background: linear-gradient(135deg, #FF4F00, #FF6B35);
+    color: #ffffff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 4px;
+    box-shadow: 0 4px 15px rgba(255, 79, 0, 0.3);
+}
+
+.auth-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 79, 0, 0.4);
+}
+
+.auth-btn:active {
+    transform: translateY(0);
+}
+
+/* Переключатель между входом и регистрацией */
+.auth-switch {
+    text-align: center;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #e1e5e9;
+}
+
+.switch-btn {
+    background-color: #ffffff;
+    color: #FF4F00;
+    border: 2px solid #FF4F00;
+    padding: 10px 16px;
+    border-radius: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.switch-btn:hover {
+    background-color: #FF4F00;
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(255, 79, 0, 0.3);
+}
+
+/* Скрытие элементов */
+.hidden {
+    display: none !important;
+}
+
+/* Современные минималистичные анимации */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes subtleSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимация для переключателя типа пользователя */
+.user-type-toggle {
+    animation: subtleSlide 0.3s ease-out 0.1s both;
+}
+
+/* Анимация для заголовка */
+.auth-header {
+    animation: subtleSlide 0.3s ease-out 0.2s both;
+}
+
+/* Анимация для полей формы */
+.form-group {
+    animation: subtleSlide 0.3s ease-out both;
+}
+
+.form-group:nth-child(1) { animation-delay: 0.3s; }
+.form-group:nth-child(2) { animation-delay: 0.35s; }
+.form-group:nth-child(3) { animation-delay: 0.4s; }
+.form-group:nth-child(4) { animation-delay: 0.45s; }
+
+/* Анимация для кнопки */
+.auth-btn {
+    animation: subtleSlide 0.3s ease-out 0.5s both;
+}
+
+/* Анимация для переключателя форм */
+.auth-switch {
+    animation: subtleSlide 0.3s ease-out 0.55s both;
+}
+
+/* Адаптивность для личного кабинета */
+@media (max-width: 768px) {
+    .personal-container {
+        padding: 5px 3px;
+        min-height: calc(100vh - 100px);
+    }
+    
+    .auth-form-container {
+        padding: 15px 12px;
+        border-radius: 0;
+    }
+    
+    .auth-title {
+        font-size: 18px;
+    }
+    
+    .auth-subtitle {
+        font-size: 11px;
+    }
+    
+    .toggle-btn {
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+    
+    .form-group input {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+    
+    .auth-btn {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+    
+    .switch-btn {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .personal-container {
+        padding: 3px 3px;
+    }
+    
+    .auth-form-container {
+        padding: 12px 10px;
+    }
+    
+    .auth-title {
+        font-size: 16px;
+    }
+    
+    .user-type-toggle {
+        margin-bottom: 10px;
+    }
+    
+    .toggle-btn {
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+    
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+}
+
+/* Темная тема для личного кабинета */
+body.dark-theme .personal-container {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/1.jpg');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    box-shadow: none;
+}
+
+body.dark-theme .user-type-toggle {
+    background-color: #393939;
+}
+
+body.dark-theme .toggle-btn {
+    color: #cccccc;
+}
+
+body.dark-theme .toggle-btn.active {
+    background-color: #FF4F00;
+    color: #ffffff;
+}
+
+body.dark-theme .toggle-btn:hover:not(.active) {
+    color: #FF4F00;
+    background-color: rgba(255, 79, 0, 0.2);
+}
+
+body.dark-theme .auth-form-container {
+    background-color: #393939;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .auth-title {
+    color: #ffffff;
+}
+
+body.dark-theme .auth-subtitle {
+    color: #cccccc;
+}
+
+body.dark-theme .form-group label {
+    color: #ffffff;
+}
+
+body.dark-theme .form-group input {
+    background-color: #2c2c2c;
+    border-color: #555555;
+    color: #ffffff;
+}
+
+body.dark-theme .form-group input:focus {
+    border-color: #FF4F00;
+    background-color: #333333;
+}
+
+body.dark-theme .form-group input::placeholder {
+    color: #888888;
+}
+
+body.dark-theme .checkbox-container {
+    color: #cccccc;
+}
+
+body.dark-theme .checkmark {
+    border-color: #555555;
+}
+
+body.dark-theme .auth-switch {
+    border-top-color: #555555;
+}
+
+body.dark-theme .switch-btn {
+    background-color: #393939;
+    color: #FF4F00;
+    border-color: #FF4F00;
+}
+
+body.dark-theme .switch-btn:hover {
+    background-color: #FF4F00;
+    color: #ffffff;
+}
+
 
