@@ -34,23 +34,29 @@ body {
     flex-wrap: nowrap;
 }
 
-/* Место для логотипа */
-.logo-placeholder {
+/* Логотип */
+.logo-container {
     display: flex;
     align-items: center;
     min-width: 150px;
     margin-left: -19px;
 }
 
-.logo-text {
-    font-size: 18px;
-    font-weight: 600;
-    color: #666666;
-    padding: 10px 20px;
-    border: 2px dashed #cccccc;
-    border-radius: 4px;
-    text-align: center;
-    background-color: #f9f9f9;
+.logo-image {
+    max-height: 70px;
+    max-width: 200px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.logo-image:hover {
+    transform: scale(1.05);
+}
+
+/* Логотип в темной теме */
+body.dark-theme .logo-image {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+    border-radius: 2px;
 }
 
 /* Навигационное меню */
@@ -82,7 +88,7 @@ body {
 }
 
 .nav-link.active {
-    color: #FF4F00;
+    color: #D45319;
     font-weight: 700;
 }
 
@@ -214,7 +220,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 32px;
     font-weight: 400;
-    color: #FF4F00;
+    color: #D45319;
     margin: 50px 0 0 0;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8), 0 0 10px rgba(255, 79, 0, 0.3);
     animation: fadeInLeft 1.2s ease-out 1s both;
@@ -247,10 +253,15 @@ body {
         height: 100%;
     }
     
-    .logo-placeholder {
+    .logo-container {
         margin-left: 20px;
         flex: 1;
         justify-content: flex-start;
+    }
+    
+    .logo-image {
+        max-height: 55px;
+        max-width: 160px;
     }
     
     .hamburger {
@@ -350,7 +361,7 @@ body.dark-theme .nav-link:hover {
 }
 
 body.dark-theme .nav-link.active {
-    color: #FF4F00;
+    color: #D45319;
 }
 
 body.dark-theme .theme-toggle {
@@ -518,11 +529,11 @@ body.dark-theme .image-container {
 }
 
 .mobile-nav-link:hover {
-    color: #FF4F00;
+    color: #D45319;
 }
 
 .mobile-nav-link.active {
-    color: #FF4F00;
+    color: #D45319;
 }
 
 /* Темная тема для мобильного меню */
@@ -543,11 +554,11 @@ body.dark-theme .mobile-menu-close {
 }
 
 body.dark-theme .mobile-nav-link:hover {
-    color: #FF4F00;
+    color: #D45319;
 }
 
 body.dark-theme .mobile-nav-link.active {
-    color: #FF4F00;
+    color: #D45319;
 }
 
 /* Стили для страницы личного кабинета */
@@ -566,6 +577,7 @@ body.dark-theme .mobile-nav-link.active {
     background-attachment: fixed;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.3), 0 0 60px rgba(0, 0, 0, 0.2);
 }
+
 
 /* Переключатель типа пользователя */
 .user-type-toggle {
@@ -593,13 +605,13 @@ body.dark-theme .mobile-nav-link.active {
 }
 
 .toggle-btn.active {
-    background-color: #FF4F00;
+    background-color: #D45319;
     color: #ffffff;
     box-shadow: 0 2px 8px rgba(255, 79, 0, 0.3);
 }
 
 .toggle-btn:hover:not(.active) {
-    color: #FF4F00;
+    color: #D45319;
     background-color: rgba(255, 79, 0, 0.1);
 }
 
@@ -631,7 +643,7 @@ body.dark-theme .mobile-nav-link.active {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #FF4F00, #FF6B35, #FF4F00);
+    background: linear-gradient(90deg, #D45319, #FF6B35, #D45319);
 }
 
 /* Заголовок формы */
@@ -693,7 +705,7 @@ body.dark-theme .mobile-nav-link.active {
 
 .form-group input:focus {
     outline: none;
-    border-color: #FF4F00;
+    border-color: #D45319;
     background-color: #ffffff;
     box-shadow: 0 0 0 3px rgba(255, 79, 0, 0.1);
 }
@@ -735,8 +747,8 @@ body.dark-theme .mobile-nav-link.active {
 }
 
 .checkbox-container input[type="checkbox"]:checked + .checkmark {
-    background-color: #FF4F00;
-    border-color: #FF4F00;
+    background-color: #D45319;
+    border-color: #D45319;
 }
 
 .checkbox-container input[type="checkbox"]:checked + .checkmark::after {
@@ -752,7 +764,7 @@ body.dark-theme .mobile-nav-link.active {
 }
 
 .forgot-password {
-    color: #FF4F00;
+    color: #D45319;
     text-decoration: none;
     font-family: 'Geometria', sans-serif;
     font-size: 12px;
@@ -766,7 +778,7 @@ body.dark-theme .mobile-nav-link.active {
 }
 
 .terms-link {
-    color: #FF4F00;
+    color: #D45319;
     text-decoration: none;
     font-weight: 600;
 }
@@ -777,7 +789,7 @@ body.dark-theme .mobile-nav-link.active {
 
 /* Кнопка авторизации */
 .auth-btn {
-    background: linear-gradient(135deg, #FF4F00, #FF6B35);
+    background: linear-gradient(135deg, #D45319, #FF6B35);
     color: #ffffff;
     border: none;
     padding: 10px 16px;
@@ -812,8 +824,8 @@ body.dark-theme .mobile-nav-link.active {
 
 .switch-btn {
     background-color: #ffffff;
-    color: #FF4F00;
-    border: 2px solid #FF4F00;
+    color: #D45319;
+    border: 2px solid #D45319;
     padding: 10px 16px;
     border-radius: 0;
     font-family: 'Montserrat', sans-serif;
@@ -827,7 +839,7 @@ body.dark-theme .mobile-nav-link.active {
 }
 
 .switch-btn:hover {
-    background-color: #FF4F00;
+    background-color: #D45319;
     color: #ffffff;
     box-shadow: 0 4px 15px rgba(255, 79, 0, 0.3);
 }
@@ -968,6 +980,11 @@ body.dark-theme .personal-container {
     box-shadow: none;
 }
 
+/* Фон страницы в темной теме */
+body.dark-theme {
+    background-color: #393939;
+}
+
 body.dark-theme .user-type-toggle {
     background-color: #393939;
 }
@@ -977,12 +994,12 @@ body.dark-theme .toggle-btn {
 }
 
 body.dark-theme .toggle-btn.active {
-    background-color: #FF4F00;
+    background-color: #D45319;
     color: #ffffff;
 }
 
 body.dark-theme .toggle-btn:hover:not(.active) {
-    color: #FF4F00;
+    color: #D45319;
     background-color: rgba(255, 79, 0, 0.2);
 }
 
@@ -1010,7 +1027,7 @@ body.dark-theme .form-group input {
 }
 
 body.dark-theme .form-group input:focus {
-    border-color: #FF4F00;
+    border-color: #D45319;
     background-color: #333333;
 }
 
@@ -1032,12 +1049,12 @@ body.dark-theme .auth-switch {
 
 body.dark-theme .switch-btn {
     background-color: #393939;
-    color: #FF4F00;
-    border-color: #FF4F00;
+    color: #D45319;
+    border-color: #D45319;
 }
 
 body.dark-theme .switch-btn:hover {
-    background-color: #FF4F00;
+    background-color: #D45319;
     color: #ffffff;
 }
 
