@@ -19,8 +19,31 @@
             
             <!-- Навигационное меню -->
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link active">Главная</a></li>
-                <li><a href="services.html" class="nav-link">Наши услуги</a></li>
+                <li class="nav-item dropdown">
+                    <a href="index.html" class="nav-link active dropdown-toggle">Главная</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#about" class="dropdown-link">О компании</a></li>
+                        <li><a href="#team" class="dropdown-link">Наши сотрудники</a></li>
+                        <li><a href="#" class="dropdown-link" id="navRequisitesBtn">Реквизиты</a></li>
+                        <li><a href="#documents" class="dropdown-link">Документы</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="services.html" class="nav-link dropdown-toggle">Наши услуги</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="services.html#labor-protection" class="dropdown-link">Обучение охране труда</a></li>
+                        <li><a href="services.html#electrical-safety" class="dropdown-link">Электробезопасность</a></li>
+                        <li><a href="services.html#height-work" class="dropdown-link">Работы на высоте</a></li>
+                        <li><a href="services.html#confined-spaces" class="dropdown-link">Работа в ограниченных и замкнутых пространствах</a></li>
+                        <li><a href="services.html#fire-safety" class="dropdown-link">Пожарная безопасность</a></li>
+                        <li><a href="services.html#industrial-safety" class="dropdown-link">Промышленная безопасность</a></li>
+                        <li><a href="services.html#worker-training" class="dropdown-link">Обучение на рабочие профессии</a></li>
+                        <li><a href="services.html#civil-defense" class="dropdown-link">Гражданская оборона</a></li>
+                        <li><a href="services.html#sro" class="dropdown-link">СРО (строительство, реконструкция)</a></li>
+                        <li><a href="services.html#risk-assessment" class="dropdown-link">Оценка профрисков</a></li>
+                        <li><a href="services.html#accident-investigation" class="dropdown-link">Расследование несчастных случаев</a></li>
+                    </ul>
+                </li>
                 <li><a href="investigation.html" class="nav-link">Расследование несчастных случаев</a></li>
                 <li><a href="information.html" class="nav-link">Информация</a></li>
                 <li><a href="cooperation.html" class="nav-link">Для сотрудничества</a></li>
@@ -57,7 +80,22 @@
             <!-- Навигационное меню (мобильное) -->
             <ul class="mobile-nav-menu">
                 <li><a href="index.html" class="mobile-nav-link active">Главная</a></li>
-                <li><a href="services.html" class="mobile-nav-link">Наши услуги</a></li>
+                <li class="mobile-dropdown">
+                    <a href="services.html" class="mobile-nav-link">Наши услуги</a>
+                    <ul class="mobile-dropdown-menu">
+                        <li><a href="services.html#labor-protection" class="mobile-dropdown-link">Обучение охране труда</a></li>
+                        <li><a href="services.html#electrical-safety" class="mobile-dropdown-link">Электробезопасность</a></li>
+                        <li><a href="services.html#height-work" class="mobile-dropdown-link">Работы на высоте</a></li>
+                        <li><a href="services.html#confined-spaces" class="mobile-dropdown-link">Работа в ограниченных и замкнутых пространствах</a></li>
+                        <li><a href="services.html#fire-safety" class="mobile-dropdown-link">Пожарная безопасность</a></li>
+                        <li><a href="services.html#industrial-safety" class="mobile-dropdown-link">Промышленная безопасность</a></li>
+                        <li><a href="services.html#worker-training" class="mobile-dropdown-link">Обучение на рабочие профессии</a></li>
+                        <li><a href="services.html#civil-defense" class="mobile-dropdown-link">Гражданская оборона</a></li>
+                        <li><a href="services.html#sro" class="mobile-dropdown-link">СРО (строительство, реконструкция)</a></li>
+                        <li><a href="services.html#risk-assessment" class="mobile-dropdown-link">Оценка профрисков</a></li>
+                        <li><a href="services.html#accident-investigation" class="mobile-dropdown-link">Расследование несчастных случаев</a></li>
+                    </ul>
+                </li>
                 <li><a href="investigation.html" class="mobile-nav-link">Расследование несчастных случаев</a></li>
                 <li><a href="information.html" class="mobile-nav-link">Информация</a></li>
                 <li><a href="cooperation.html" class="mobile-nav-link">Для сотрудничества</a></li>
@@ -357,6 +395,37 @@
         </section>
     </main>
 
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="footer-title">Контакты</h3>
+                    <div class="footer-info">
+                        <p class="footer-text">Адрес</p>
+                        <p class="footer-text">Ссылки на социальные сети</p>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">Режим работы</h3>
+                    <div class="footer-info">
+                        <p class="footer-text">Оставить заявку</p>
+                        <a href="#" class="footer-link" id="footerOrderCallBtn">Заказать звонок</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">Геолокация</h3>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-bottom-text">Политика конфиденциальности / персональных данных</p>
+            </div>
+        </div>
+    </footer>
+
     <!-- Модальное окно заказа звонка -->
     <div class="modal-overlay" id="orderCallModal">
         <div class="modal-container">
@@ -500,6 +569,13 @@
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme === 'dark') {
                 document.body.classList.add('dark-theme');
+            } else {
+                // По умолчанию светлая тема
+                document.body.classList.remove('dark-theme');
+                // Устанавливаем светлую тему в localStorage если её там нет
+                if (!savedTheme) {
+                    localStorage.setItem('theme', 'light');
+                }
             }
         })();
         
@@ -510,15 +586,29 @@
             const body = document.body;
             
             function toggleTheme() {
-                body.classList.toggle('dark-theme');
+                // Добавляем класс для эффекта fade
+                body.classList.add('theme-transitioning');
                 
-                if (body.classList.contains('dark-theme')) {
-                    localStorage.setItem('theme', 'dark');
-                    console.log('Switched to dark theme');
-                } else {
-                    localStorage.setItem('theme', 'light');
-                    console.log('Switched to light theme');
-                }
+                // Небольшая задержка для плавного перехода
+                setTimeout(() => {
+                    body.classList.toggle('dark-theme');
+                    
+                    // Убираем класс перехода после завершения анимации
+                    setTimeout(() => {
+                        body.classList.remove('theme-transitioning');
+                    }, 400);
+                }, 50);
+                
+                // Сохраняем состояние темы после переключения
+                setTimeout(() => {
+                    if (body.classList.contains('dark-theme')) {
+                        localStorage.setItem('theme', 'dark');
+                        console.log('Switched to dark theme');
+                    } else {
+                        localStorage.setItem('theme', 'light');
+                        console.log('Switched to light theme');
+                    }
+                }, 450);
             }
             
             if (themeToggle) {
@@ -555,6 +645,52 @@
                 mobileNavLinks.forEach(link => {
                     link.addEventListener('click', closeMobileMenu);
                 });
+
+                // Мобильное выпадающее меню
+                const mobileDropdowns = document.querySelectorAll('.mobile-dropdown');
+                mobileDropdowns.forEach(dropdown => {
+                    const link = dropdown.querySelector('.mobile-nav-link');
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    });
+                });
+
+                // Обработчики для выпадающего меню услуг
+                const dropdownLinks = document.querySelectorAll('.dropdown-link');
+                dropdownLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const href = link.getAttribute('href');
+                        if (href && href.includes('services.html')) {
+                            // Прокручиваем к началу страницы перед переходом
+                            window.scrollTo(0, 0);
+                            window.location.href = href;
+                        } else if (href && href.includes('index.html')) {
+                            // Прокручиваем к началу страницы перед переходом на главную
+                            window.scrollTo(0, 0);
+                            window.location.href = href;
+                        }
+                    });
+                });
+
+                // Обработчики для мобильного выпадающего меню услуг
+                const mobileDropdownLinks = document.querySelectorAll('.mobile-dropdown-link');
+                mobileDropdownLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const href = link.getAttribute('href');
+                        if (href && href.includes('services.html')) {
+                            // Прокручиваем к началу страницы перед переходом
+                            window.scrollTo(0, 0);
+                            window.location.href = href;
+                        } else if (href && href.includes('index.html')) {
+                            // Прокручиваем к началу страницы перед переходом на главную
+                            window.scrollTo(0, 0);
+                            window.location.href = href;
+                        }
+                    });
+                });
                 
                 // Закрытие меню при клике вне его
                 mobileMenu.addEventListener('click', (e) => {
@@ -562,16 +698,76 @@
                         closeMobileMenu();
                     }
                 });
+                
+                // Прокручиваем к началу страницы при загрузке только если нет якоря
+                const hash = window.location.hash;
+                if (!hash) {
+                    // Прокручиваем к началу страницы после полной загрузки
+                    window.addEventListener('load', function() {
+                        window.scrollTo(0, 0);
+                        document.documentElement.scrollTop = 0;
+                        document.body.scrollTop = 0;
+                    });
+                }
             }
+            
+            // Обработчики для выпадающих меню (десктоп)
+            const dropdowns = document.querySelectorAll('.nav-item.dropdown');
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('mouseenter', () => {
+                    dropdown.querySelector('.dropdown-menu').style.display = 'block';
+                });
+                
+                dropdown.addEventListener('mouseleave', () => {
+                    dropdown.querySelector('.dropdown-menu').style.display = 'none';
+                });
+            });
+
+            // Обработка якорей при загрузке страницы
+            function handleAnchorNavigation() {
+                const hash = window.location.hash;
+                console.log('Обработка якоря:', hash);
+                if (hash) {
+                    const targetElement = document.querySelector(hash);
+                    console.log('Найденный элемент:', targetElement);
+                    if (targetElement) {
+                        // Прокручиваем к элементу с плавной анимацией
+                        targetElement.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        console.log('Прокрутка выполнена к элементу:', hash);
+                    } else {
+                        console.log('Элемент не найден:', hash);
+                    }
+                }
+            }
+
+            // Обрабатываем якорь после полной загрузки страницы
+            window.addEventListener('load', function() {
+                setTimeout(handleAnchorNavigation, 100);
+                // Дополнительная попытка через большее время
+                setTimeout(handleAnchorNavigation, 500);
+            });
+            
+            // Обрабатываем якорь при DOMContentLoaded
+            document.addEventListener('DOMContentLoaded', function() {
+                setTimeout(handleAnchorNavigation, 200);
+            });
+            
+            // Обрабатываем изменения якоря
+            window.addEventListener('hashchange', handleAnchorNavigation);
 
             // Модальное окно заказа звонка
             const orderCallBtn = document.getElementById('orderCallBtn');
+            const footerOrderCallBtn = document.getElementById('footerOrderCallBtn');
             const orderCallModal = document.getElementById('orderCallModal');
             const modalClose = document.getElementById('modalClose');
             const orderForm = document.getElementById('orderForm');
 
             // Модальное окно реквизитов
             const showRequisitesBtn = document.getElementById('showRequisitesBtn');
+            const navRequisitesBtn = document.getElementById('navRequisitesBtn');
             const requisitesModal = document.getElementById('requisitesModal');
             const requisitesModalClose = document.getElementById('requisitesModalClose');
 
@@ -591,6 +787,15 @@
                 });
             }
 
+            // Открытие модального окна заказа звонка из футера
+            if (footerOrderCallBtn) {
+                footerOrderCallBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    orderCallModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+
             // Открытие модального окна реквизитов
             if (showRequisitesBtn) {
                 showRequisitesBtn.addEventListener('click', (e) => {
@@ -599,6 +804,66 @@
                     document.body.style.overflow = 'hidden';
                 });
             }
+
+            // Открытие модального окна реквизитов из навигации
+            if (navRequisitesBtn) {
+                navRequisitesBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    requisitesModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+
+            // Обработчики для выпадающего меню
+            const dropdownLinks = document.querySelectorAll('.dropdown-link');
+            dropdownLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const href = link.getAttribute('href');
+                    
+                    // Получаем высоту навигационной панели
+                    const header = document.querySelector('.header');
+                    const headerHeight = header ? header.offsetHeight : 80;
+                    
+                    if (href === '#about') {
+                        // Автоскролл до блока "О компании"
+                        const aboutSection = document.querySelector('.about-section');
+                        if (aboutSection) {
+                            const elementPosition = aboutSection.offsetTop;
+                            const offsetPosition = elementPosition - headerHeight;
+                            
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    } else if (href === '#team') {
+                        // Автоскролл до блока "Наши сотрудники"
+                        const teamSection = document.querySelector('.team-section');
+                        if (teamSection) {
+                            const elementPosition = teamSection.offsetTop;
+                            const offsetPosition = elementPosition - headerHeight;
+                            
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    } else if (href === '#documents') {
+                        // Автоскролл до блока "Документы"
+                        const documentsSection = document.querySelector('.documents-section');
+                        if (documentsSection) {
+                            const elementPosition = documentsSection.offsetTop;
+                            const offsetPosition = elementPosition - headerHeight;
+                            
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
 
             // Обработчики для документов
             documentItems.forEach((item, index) => {

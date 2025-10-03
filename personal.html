@@ -19,8 +19,31 @@
             
             <!-- Навигационное меню -->
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Главная</a></li>
-                <li><a href="services.html" class="nav-link">Наши услуги</a></li>
+                <li class="nav-item dropdown">
+                    <a href="index.html" class="nav-link dropdown-toggle">Главная</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html#about" class="dropdown-link">О компании</a></li>
+                        <li><a href="index.html#team" class="dropdown-link">Наши сотрудники</a></li>
+                        <li><a href="#" class="dropdown-link" id="navRequisitesBtn">Реквизиты</a></li>
+                        <li><a href="index.html#documents" class="dropdown-link">Документы</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="services.html" class="nav-link dropdown-toggle">Наши услуги</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="services.html#labor-protection" class="dropdown-link">Обучение охране труда</a></li>
+                        <li><a href="services.html#electrical-safety" class="dropdown-link">Электробезопасность</a></li>
+                        <li><a href="services.html#height-work" class="dropdown-link">Работы на высоте</a></li>
+                        <li><a href="services.html#confined-spaces" class="dropdown-link">Работа в ограниченных и замкнутых пространствах</a></li>
+                        <li><a href="services.html#fire-safety" class="dropdown-link">Пожарная безопасность</a></li>
+                        <li><a href="services.html#industrial-safety" class="dropdown-link">Промышленная безопасность</a></li>
+                        <li><a href="services.html#worker-training" class="dropdown-link">Обучение на рабочие профессии</a></li>
+                        <li><a href="services.html#civil-defense" class="dropdown-link">Гражданская оборона</a></li>
+                        <li><a href="services.html#sro" class="dropdown-link">СРО (строительство, реконструкция)</a></li>
+                        <li><a href="services.html#risk-assessment" class="dropdown-link">Оценка профрисков</a></li>
+                        <li><a href="services.html#accident-investigation" class="dropdown-link">Расследование несчастных случаев</a></li>
+                    </ul>
+                </li>
                 <li><a href="investigation.html" class="nav-link">Расследование несчастных случаев</a></li>
                 <li><a href="information.html" class="nav-link">Информация</a></li>
                 <li><a href="cooperation.html" class="nav-link">Для сотрудничества</a></li>
@@ -56,8 +79,31 @@
             
             <!-- Навигационное меню (мобильное) -->
             <ul class="mobile-nav-menu">
-                <li><a href="index.html" class="mobile-nav-link">Главная</a></li>
-                <li><a href="services.html" class="mobile-nav-link">Наши услуги</a></li>
+                <li class="mobile-dropdown">
+                    <a href="index.html" class="mobile-nav-link">Главная</a>
+                    <ul class="mobile-dropdown-menu">
+                        <li><a href="index.html#about" class="mobile-dropdown-link">О компании</a></li>
+                        <li><a href="index.html#team" class="mobile-dropdown-link">Наши сотрудники</a></li>
+                        <li><a href="#" class="mobile-dropdown-link" id="mobileNavRequisitesBtn">Реквизиты</a></li>
+                        <li><a href="index.html#documents" class="mobile-dropdown-link">Документы</a></li>
+                    </ul>
+                </li>
+                <li class="mobile-dropdown">
+                    <a href="services.html" class="mobile-nav-link">Наши услуги</a>
+                    <ul class="mobile-dropdown-menu">
+                        <li><a href="services.html#labor-protection" class="mobile-dropdown-link">Обучение охране труда</a></li>
+                        <li><a href="services.html#electrical-safety" class="mobile-dropdown-link">Электробезопасность</a></li>
+                        <li><a href="services.html#height-work" class="mobile-dropdown-link">Работы на высоте</a></li>
+                        <li><a href="services.html#confined-spaces" class="mobile-dropdown-link">Работа в ограниченных и замкнутых пространствах</a></li>
+                        <li><a href="services.html#fire-safety" class="mobile-dropdown-link">Пожарная безопасность</a></li>
+                        <li><a href="services.html#industrial-safety" class="mobile-dropdown-link">Промышленная безопасность</a></li>
+                        <li><a href="services.html#worker-training" class="mobile-dropdown-link">Обучение на рабочие профессии</a></li>
+                        <li><a href="services.html#civil-defense" class="mobile-dropdown-link">Гражданская оборона</a></li>
+                        <li><a href="services.html#sro" class="mobile-dropdown-link">СРО (строительство, реконструкция)</a></li>
+                        <li><a href="services.html#risk-assessment" class="mobile-dropdown-link">Оценка профрисков</a></li>
+                        <li><a href="services.html#accident-investigation" class="mobile-dropdown-link">Расследование несчастных случаев</a></li>
+                    </ul>
+                </li>
                 <li><a href="investigation.html" class="mobile-nav-link">Расследование несчастных случаев</a></li>
                 <li><a href="information.html" class="mobile-nav-link">Информация</a></li>
                 <li><a href="cooperation.html" class="mobile-nav-link">Для сотрудничества</a></li>
@@ -141,6 +187,68 @@
             </div>
         </div>
     </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="footer-title">Контакты</h3>
+                    <div class="footer-info">
+                        <p class="footer-text">Адрес</p>
+                        <p class="footer-text">Ссылки на социальные сети</p>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">Режим работы</h3>
+                    <div class="footer-info">
+                        <p class="footer-text">Оставить заявку</p>
+                        <a href="#" class="footer-link" id="footerOrderCallBtn">Заказать звонок</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">Геолокация</h3>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-bottom-text">Политика конфиденциальности / персональных данных</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно заказа звонка -->
+    <div class="modal-overlay" id="orderCallModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 class="modal-title">ЗАКАЗАТЬ ЗВОНОК</h2>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-content">
+                <form class="order-form" id="orderForm">
+                    <div class="form-group">
+                        <label for="orderName">Имя</label>
+                        <input type="text" id="orderName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderPhone">Телефон</label>
+                        <input type="tel" id="orderPhone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderEmail">Email</label>
+                        <input type="email" id="orderEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderMessage">Сообщение</label>
+                        <textarea id="orderMessage" name="message" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="order-btn">Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+    </div>
     
     <script>
         // Применяем тему сразу при загрузке страницы
@@ -201,10 +309,114 @@
                 mobileNavLinks.forEach(link => {
                     link.addEventListener('click', closeMobileMenu);
                 });
+
+                // Мобильное выпадающее меню
+                const mobileDropdowns = document.querySelectorAll('.mobile-dropdown');
+                mobileDropdowns.forEach(dropdown => {
+                    const link = dropdown.querySelector('.mobile-nav-link');
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    });
+                });
+
+                // Обработчики для выпадающего меню
+                const dropdownLinks = document.querySelectorAll('.dropdown-link');
+                dropdownLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const href = link.getAttribute('href');
+                        if (href && href.includes('services.html')) {
+                            // Прокручиваем к началу страницы перед переходом
+                            window.scrollTo(0, 0);
+                            window.location.href = href;
+                        } else if (href && href.includes('index.html')) {
+                            // Прокручиваем к началу страницы перед переходом на главную
+                            window.scrollTo(0, 0);
+                            window.location.href = href;
+                        }
+                    });
+                });
+
+                // Обработчики для мобильного выпадающего меню
+                const mobileDropdownLinks = document.querySelectorAll('.mobile-dropdown-link');
+                mobileDropdownLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const href = link.getAttribute('href');
+                        if (href && href.includes('services.html')) {
+                            // Прокручиваем к началу страницы перед переходом
+                            window.scrollTo(0, 0);
+                            window.location.href = href;
+                        } else if (href && href.includes('index.html')) {
+                            // Прокручиваем к началу страницы перед переходом на главную
+                            window.scrollTo(0, 0);
+                            window.location.href = href;
+                        }
+                    });
+                });
                 
                 mobileMenu.addEventListener('click', (e) => {
                     if (e.target === mobileMenu) {
                         closeMobileMenu();
+                    }
+                });
+                
+                // Прокручиваем к началу страницы при загрузке
+                window.scrollTo(0, 0);
+                document.documentElement.scrollTop = 0;
+                document.body.scrollTop = 0;
+            }
+            
+            // Обработчики для выпадающих меню (десктоп)
+            const dropdowns = document.querySelectorAll('.nav-item.dropdown');
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('mouseenter', () => {
+                    dropdown.querySelector('.dropdown-menu').style.display = 'block';
+                });
+                
+                dropdown.addEventListener('mouseleave', () => {
+                    dropdown.querySelector('.dropdown-menu').style.display = 'none';
+                });
+            });
+
+            // Модальное окно реквизитов
+            const navRequisitesBtn = document.getElementById('navRequisitesBtn');
+            const mobileNavRequisitesBtn = document.getElementById('mobileNavRequisitesBtn');
+            const requisitesModal = document.getElementById('requisitesModal');
+            const requisitesModalClose = document.getElementById('requisitesModalClose');
+
+            // Открытие модального окна реквизитов
+            if (navRequisitesBtn) {
+                navRequisitesBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    requisitesModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+
+            if (mobileNavRequisitesBtn) {
+                mobileNavRequisitesBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    requisitesModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+
+            // Закрытие модального окна реквизитов
+            if (requisitesModalClose) {
+                requisitesModalClose.addEventListener('click', () => {
+                    requisitesModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            }
+
+            // Закрытие при клике вне модального окна реквизитов
+            if (requisitesModal) {
+                requisitesModal.addEventListener('click', (e) => {
+                    if (e.target === requisitesModal) {
+                        requisitesModal.classList.remove('active');
+                        document.body.style.overflow = 'auto';
                     }
                 });
             }
@@ -303,8 +515,165 @@
                     }
                 }
             }
+
+            // Модальное окно заказа звонка
+            const footerOrderCallBtn = document.getElementById('footerOrderCallBtn');
+            const orderCallModal = document.getElementById('orderCallModal');
+            const modalClose = document.getElementById('modalClose');
+            const orderForm = document.getElementById('orderForm');
+
+            // Модальное окно реквизитов
+            const navRequisitesBtn = document.getElementById('navRequisitesBtn');
+            const mobileNavRequisitesBtn = document.getElementById('mobileNavRequisitesBtn');
+            const requisitesModal = document.getElementById('requisitesModal');
+            const requisitesModalClose = document.getElementById('requisitesModalClose');
+
+            // Открытие модального окна заказа звонка
+            if (footerOrderCallBtn) {
+                footerOrderCallBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    orderCallModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+
+            // Закрытие модального окна заказа звонка
+            if (modalClose) {
+                modalClose.addEventListener('click', () => {
+                    orderCallModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            }
+
+            // Закрытие при клике вне модального окна заказа звонка
+            if (orderCallModal) {
+                orderCallModal.addEventListener('click', (e) => {
+                    if (e.target === orderCallModal) {
+                        orderCallModal.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+
+            // Обработка формы заказа звонка
+            if (orderForm) {
+                orderForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const formData = new FormData(orderForm);
+                    
+                    console.log('Order call form submitted:', {
+                        name: formData.get('name'),
+                        phone: formData.get('phone'),
+                        email: formData.get('email'),
+                        message: formData.get('message')
+                    });
+                    
+                    // Здесь будет логика отправки заявки
+                    alert('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
+                    
+                    // Закрываем модальное окно
+                    orderCallModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                    
+                    // Очищаем форму
+                    orderForm.reset();
+                });
+            }
+
+            // Открытие модального окна реквизитов
+            if (navRequisitesBtn) {
+                navRequisitesBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    requisitesModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+
+            if (mobileNavRequisitesBtn) {
+                mobileNavRequisitesBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    requisitesModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+
+            // Закрытие модального окна реквизитов
+            if (requisitesModalClose) {
+                requisitesModalClose.addEventListener('click', () => {
+                    requisitesModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            }
+
+            // Закрытие при клике вне модального окна реквизитов
+            if (requisitesModal) {
+                requisitesModal.addEventListener('click', (e) => {
+                    if (e.target === requisitesModal) {
+                        requisitesModal.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
         });
     </script>
+
+    <!-- Модальное окно реквизитов -->
+    <div class="modal-overlay" id="requisitesModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 class="modal-title">РЕКВИЗИТЫ</h2>
+                <button class="modal-close" id="requisitesModalClose">&times;</button>
+            </div>
+            <div class="modal-content">
+                <div class="requisites-content">
+                    <h3 class="requisites-subtitle">Реквизиты АНО ДПО УЦ «Альянс-Лидер»</h3>
+                    <div class="requisites-table">
+                        <div class="requisites-row">
+                            <span class="requisites-label">Полное наименование:</span>
+                            <span class="requisites-value"></span>
+                        </div>
+                        <div class="requisites-row">
+                            <span class="requisites-label">Юридический, почтовый адрес:</span>
+                            <span class="requisites-value"></span>
+                        </div>
+                        <div class="requisites-row">
+                            <span class="requisites-label">Тел./факс:</span>
+                            <span class="requisites-value"></span>
+                        </div>
+                        <div class="requisites-row">
+                            <span class="requisites-label">Электронная почта:</span>
+                            <span class="requisites-value"></span>
+                        </div>
+                        <div class="requisites-row">
+                            <span class="requisites-label">ИНН:</span>
+                            <span class="requisites-value"></span>
+                        </div>
+                        <div class="requisites-row">
+                            <span class="requisites-label">КПП:</span>
+                            <span class="requisites-value"></span>
+                        </div>
+                        <div class="requisites-row">
+                            <span class="requisites-label">Р/с:</span>
+                            <span class="requisites-value"></span>
+                        </div>
+                        <div class="requisites-row">
+                            <span class="requisites-label">к/с:</span>
+                            <span class="requisites-value"></span>
+                        </div>
+                        <div class="requisites-row">
+                            <span class="requisites-label">Банк получателя:</span>
+                            <span class="requisites-value"></span>
+                        </div>
+                        <div class="requisites-row">
+                            <span class="requisites-label">БИК:</span>
+                            <span class="requisites-value"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
 

@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наши услуги - Образовательный центр</title>
+    <script>
+        // Принудительная прокрутка к началу страницы
+        window.addEventListener('load', function() {
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+        });
+    </script>
+    <link rel="stylesheet" href="styles.css?v=48">
+    <link href="https://fonts.googleapis.com/css2?family=Geometria:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Навигационная панель -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Логотип -->
+            <div class="logo-container">
+                <img src="images/logo.jfif" alt="Логотип" class="logo-image">
+            </div>
+            
+            <!-- Навигационное меню -->
+            <ul class="nav-menu">
+                <li class="nav-item dropdown">
+                    <a href="index.html" class="nav-link dropdown-toggle">Главная</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html#about" class="dropdown-link">О компании</a></li>
+                        <li><a href="index.html#team" class="dropdown-link">Наши сотрудники</a></li>
+                        <li><a href="#" class="dropdown-link" id="navRequisitesBtn">Реквизиты</a></li>
+                        <li><a href="index.html#documents" class="dropdown-link">Документы</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="services.html" class="nav-link active dropdown-toggle">Наши услуги</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#labor-protection" class="dropdown-link">Обучение охране труда</a></li>
+                        <li><a href="#electrical-safety" class="dropdown-link">Электробезопасность</a></li>
+                        <li><a href="#height-work" class="dropdown-link">Работы на высоте</a></li>
+                        <li><a href="#confined-spaces" class="dropdown-link">Работа в ограниченных и замкнутых пространствах</a></li>
+                        <li><a href="#fire-safety" class="dropdown-link">Пожарная безопасность</a></li>
+                        <li><a href="#industrial-safety" class="dropdown-link">Промышленная безопасность</a></li>
+                        <li><a href="#worker-training" class="dropdown-link">Обучение на рабочие профессии</a></li>
+                        <li><a href="#civil-defense" class="dropdown-link">Гражданская оборона</a></li>
+                        <li><a href="#sro" class="dropdown-link">СРО (строительство, реконструкция)</a></li>
+                        <li><a href="#risk-assessment" class="dropdown-link">Оценка профрисков</a></li>
+                        <li><a href="#accident-investigation" class="dropdown-link">Расследование несчастных случаев</a></li>
+                    </ul>
+                </li>
+                <li><a href="investigation.html" class="nav-link">Расследование несчастных случаев</a></li>
+                <li><a href="information.html" class="nav-link">Информация</a></li>
+                <li><a href="cooperation.html" class="nav-link">Для сотрудничества</a></li>
+                <li><a href="personal.html" class="nav-link">Личный кабинет</a></li>
+            </ul>
+            
+            <!-- Переключатель темы (десктоп) -->
+            <button class="theme-toggle desktop-only" id="themeToggle">
+                <span class="theme-icon moon-icon"></span>
+            </button>
+            
+            <!-- Гамбургер-кнопка (мобильная) -->
+            <button class="hamburger mobile-only" id="hamburgerToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <!-- Кнопка закрытия -->
+            <button class="mobile-menu-close" id="mobileMenuClose">×</button>
+            
+            <!-- Переключатель темы (мобильный) -->
+            <div class="mobile-theme-toggle">
+                <button class="theme-toggle mobile" id="mobileThemeToggle">
+                    <span class="theme-icon moon-icon"></span>
+                </button>
+            </div>
+            
+            <!-- Навигационное меню (мобильное) -->
+            <ul class="mobile-nav-menu">
+                <li><a href="index.html" class="mobile-nav-link">Главная</a></li>
+                <li class="mobile-dropdown">
+                    <a href="services.html" class="mobile-nav-link active">Наши услуги</a>
+                    <ul class="mobile-dropdown-menu">
+                        <li><a href="#labor-protection" class="mobile-dropdown-link">Обучение охране труда</a></li>
+                        <li><a href="#electrical-safety" class="mobile-dropdown-link">Электробезопасность</a></li>
+                        <li><a href="#height-work" class="mobile-dropdown-link">Работы на высоте</a></li>
+                        <li><a href="#confined-spaces" class="mobile-dropdown-link">Работа в ограниченных и замкнутых пространствах</a></li>
+                        <li><a href="#fire-safety" class="mobile-dropdown-link">Пожарная безопасность</a></li>
+                        <li><a href="#industrial-safety" class="mobile-dropdown-link">Промышленная безопасность</a></li>
+                        <li><a href="#worker-training" class="mobile-dropdown-link">Обучение на рабочие профессии</a></li>
+                        <li><a href="#civil-defense" class="mobile-dropdown-link">Гражданская оборона</a></li>
+                        <li><a href="#sro" class="mobile-dropdown-link">СРО (строительство, реконструкция)</a></li>
+                        <li><a href="#risk-assessment" class="mobile-dropdown-link">Оценка профрисков</a></li>
+                        <li><a href="#accident-investigation" class="mobile-dropdown-link">Расследование несчастных случаев</a></li>
+                    </ul>
+                </li>
+                <li><a href="investigation.html" class="mobile-nav-link">Расследование несчастных случаев</a></li>
+                <li><a href="information.html" class="mobile-nav-link">Информация</a></li>
+                <li><a href="cooperation.html" class="mobile-nav-link">Для сотрудничества</a></li>
+                <li><a href="personal.html" class="mobile-nav-link">Личный кабинет</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Главное содержимое -->
+    <main class="main-content">
+        <!-- Контейнер для панели услуг и контента -->
+        <div class="services-layout">
+            <!-- Панель категорий услуг -->
+            <aside class="services-sidebar" id="servicesSidebar">
+                <div class="sidebar-content">
+                    <h2 class="sidebar-title">Наши услуги</h2>
+                    <ul class="services-menu">
+                        <li class="service-item active" data-service="labor-protection">
+                            <span class="service-text">Обучение охране труда</span>
+                        </li>
+                        <li class="service-item" data-service="electrical-safety">
+                            <span class="service-text">Электробезопасность</span>
+                        </li>
+                        <li class="service-item" data-service="height-work">
+                            <span class="service-text">Работы на высоте</span>
+                        </li>
+                        <li class="service-item" data-service="confined-spaces">
+                            <span class="service-text">Работа в ограниченных и замкнутых пространствах</span>
+                        </li>
+                        <li class="service-item" data-service="fire-safety">
+                            <span class="service-text">Пожарная безопасность</span>
+                        </li>
+                        <li class="service-item" data-service="industrial-safety">
+                            <span class="service-text">Промышленная безопасность</span>
+                        </li>
+                        <li class="service-item" data-service="worker-training">
+                            <span class="service-text">Обучение на рабочие профессии</span>
+                        </li>
+                        <li class="service-item" data-service="civil-defense">
+                            <span class="service-text">Гражданская оборона</span>
+                        </li>
+                        <li class="service-item" data-service="sro">
+                            <span class="service-text">СРО (строительство, реконструкция)</span>
+                        </li>
+                        <li class="service-item" data-service="risk-assessment">
+                            <span class="service-text">Оценка профрисков</span>
+                        </li>
+                        <li class="service-item" data-service="accident-investigation">
+                            <span class="service-text">Расследование несчастных случаев</span>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Основной контент -->
+            <div class="services-content">
+                <div class="content-wrapper">
+                    <div class="service-section active" id="labor-protection">
+                        <h1 class="service-title">Обучение охране труда</h1>
+                        <div class="service-description">
+                            <p>Комплексное обучение по охране труда для руководителей, специалистов и работников различных отраслей.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-section" id="electrical-safety">
+                        <h1 class="service-title">Электробезопасность</h1>
+                        <div class="service-description">
+                            <p>Обучение правилам электробезопасности и получение соответствующих допусков.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-section" id="height-work">
+                        <h1 class="service-title">Работы на высоте</h1>
+                        <div class="service-description">
+                            <p>Специализированное обучение для выполнения работ на высоте с соблюдением всех требований безопасности.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-section" id="confined-spaces">
+                        <h1 class="service-title">Работа в ограниченных и замкнутых пространствах</h1>
+                        <div class="service-description">
+                            <p>Обучение безопасным методам работы в ограниченных и замкнутых пространствах.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-section" id="fire-safety">
+                        <h1 class="service-title">Пожарная безопасность</h1>
+                        <div class="service-description">
+                            <p>Обучение мерам пожарной безопасности и действиям в чрезвычайных ситуациях.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-section" id="industrial-safety">
+                        <h1 class="service-title">Промышленная безопасность</h1>
+                        <div class="service-description">
+                            <p>Обучение требованиям промышленной безопасности на опасных производственных объектах.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-section" id="worker-training">
+                        <h1 class="service-title">Обучение на рабочие профессии</h1>
+                        <div class="service-description">
+                            <p>Профессиональная подготовка и переподготовка рабочих специальностей.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-section" id="civil-defense">
+                        <h1 class="service-title">Гражданская оборона</h1>
+                        <div class="service-description">
+                            <p>Обучение основам гражданской обороны и защите от чрезвычайных ситуаций.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-section" id="sro">
+                        <h1 class="service-title">СРО (строительство, реконструкция)</h1>
+                        <div class="service-description">
+                            <p>Подготовка к вступлению в саморегулируемые организации в строительной сфере.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-section" id="risk-assessment">
+                        <h1 class="service-title">Оценка профрисков</h1>
+                        <div class="service-description">
+                            <p>Проведение специальной оценки условий труда и оценки профессиональных рисков.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-section" id="accident-investigation">
+                        <h1 class="service-title">Расследование несчастных случаев</h1>
+                        <div class="service-description">
+                            <p>Правовая помощь в расследовании несчастных случаев на производстве.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="footer-title">Контакты</h3>
+                    <div class="footer-info">
+                        <p class="footer-text">Адрес</p>
+                        <p class="footer-text">Ссылки на социальные сети</p>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">Режим работы</h3>
+                    <div class="footer-info">
+                        <p class="footer-text">Оставить заявку</p>
+                        <a href="#" class="footer-link" id="footerOrderCallBtn">Заказать звонок</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">Геолокация</h3>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-bottom-text">Политика конфиденциальности / персональных данных</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно заказа звонка -->
+    <div class="modal-overlay" id="orderCallModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 class="modal-title">ЗАКАЗАТЬ ЗВОНОК</h2>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-content">
+                <form class="order-form" id="orderForm">
+                    <div class="form-group">
+                        <label for="clientName">Имя</label>
+                        <input type="text" id="clientName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="clientPhone">Номер телефона</label>
+                        <input type="tel" id="clientPhone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reason">Причина обращения</label>
+                        <select id="reason" name="reason" required>
+                            <option value="">Выберите причину</option>
+                            <option value="training">Обучение по охране труда</option>
+                            <option value="investigation">Расследование несчастных случаев</option>
+                            <option value="consultation">Консультация</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="modal-submit-btn">ЗАКАЗАТЬ</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно реквизитов -->
+    <div class="modal-overlay" id="requisitesModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 class="modal-title">РЕКВИЗИТЫ</h2>
+                <button class="modal-close" id="requisitesModalClose">&times;</button>
+            </div>
+            <div class="modal-content">
+                <div class="requisites-content">
+                    <h3 class="requisites-subtitle">Реквизиты АНО ДПО УЦ «Альянс-Лидер»</h3>
+                    <div class="requisites-table">
+                        <div class="requisites-row">
+                            <span class="requisites-label">Полное наименование:</span>
+                            <span class="requisites-value"></span>
+                        </div>
+                        <div class="requisites-row">
+                            <span class="requisites-label">Юридический, почтовый адрес:</span>
+                            <span class="requisites-value"></span>
+                        </div>
+                        <div class="requisites-row">
+                            <span class="requisites-label">Тел./факс:</span>
+                            <span class="requisites-value"></span>
+                        </div>
+                        <div class="requisites-row">
+                            <span class="requisites-label">Электронная почта:</span>
+                            <span class="requisites-value"></span>
+                        </div>
+                        <div class="requisites-row">
+                            <span class="requisites-label">ИНН:</span>
+                            <span class="requisites-value"></span>
+                        </div>
+                        <div class="requisites-row">
+                            <span class="requisites-label">КПП:</span>
+                            <span class="requisites-value"></span>
+                        </div>
+                        <div class="requisites-row">
+                            <span class="requisites-label">Р/с:</span>
+                            <span class="requisites-value"></span>
+                        </div>
+                        <div class="requisites-row">
+                            <span class="requisites-label">к/с:</span>
+                            <span class="requisites-value"></span>
+                        </div>
+                        <div class="requisites-row">
+                            <span class="requisites-label">Банк получателя:</span>
+                            <span class="requisites-value"></span>
+                        </div>
+                        <div class="requisites-row">
+                            <span class="requisites-label">БИК:</span>
+                            <span class="requisites-value"></span>
+                        </div>
+                        <div class="requisites-row">
+                            <span class="requisites-label">ОКПО:</span>
+                            <span class="requisites-value"></span>
+                        </div>
+                        <div class="requisites-row">
+                            <span class="requisites-label">ОКАТО:</span>
+                            <span class="requisites-value"></span>
+                        </div>
+                        <div class="requisites-row">
+                            <span class="requisites-label">ОКТМО:</span>
+                            <span class="requisites-value"></span>
+                        </div>
+                        <div class="requisites-row">
+                            <span class="requisites-label">ОКВЭД:</span>
+                            <span class="requisites-value"></span>
+                        </div>
+                        <div class="requisites-row">
+                            <span class="requisites-label">ОГРН:</span>
+                            <span class="requisites-value"></span>
+                        </div>
+                        <div class="requisites-row">
+                            <span class="requisites-label">Включение в реестр:</span>
+                            <span class="requisites-value"></span>
+                        </div>
+                        <div class="requisites-row">
+                            <span class="requisites-label">Лицензия:</span>
+                            <span class="requisites-value"></span>
+                        </div>
+                        <div class="requisites-row">
+                            <span class="requisites-label">Директор:</span>
+                            <span class="requisites-value"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Применяем тему сразу при загрузке страницы
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+            }
+        })();
+        
+        // Переключение темы
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('themeToggle');
+            const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+            const body = document.body;
+            
+            function toggleTheme() {
+                body.classList.toggle('dark-theme');
+                
+                if (body.classList.contains('dark-theme')) {
+                    localStorage.setItem('theme', 'dark');
+                    console.log('Switched to dark theme');
+                } else {
+                    localStorage.setItem('theme', 'light');
+                    console.log('Switched to light theme');
+                }
+            }
+            
+            if (themeToggle) {
+                themeToggle.addEventListener('click', toggleTheme);
+            }
+            
+            if (mobileThemeToggle) {
+                mobileThemeToggle.addEventListener('click', toggleTheme);
+            }
+            
+            // Мобильное меню
+            const hamburgerToggle = document.getElementById('hamburgerToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuClose = document.getElementById('mobileMenuClose');
+            
+            function closeMobileMenu() {
+                hamburgerToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+            
+            if (hamburgerToggle && mobileMenu) {
+                hamburgerToggle.addEventListener('click', () => {
+                    hamburgerToggle.classList.toggle('active');
+                    mobileMenu.classList.toggle('active');
+                });
+                
+                // Закрытие меню при клике на кнопку закрытия
+                if (mobileMenuClose) {
+                    mobileMenuClose.addEventListener('click', closeMobileMenu);
+                }
+                
+                // Закрытие меню при клике на ссылку
+                const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', closeMobileMenu);
+                });
+
+                // Мобильное выпадающее меню
+                const mobileDropdowns = document.querySelectorAll('.mobile-dropdown');
+                mobileDropdowns.forEach(dropdown => {
+                    const link = dropdown.querySelector('.mobile-nav-link');
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    });
+                });
+                
+                // Закрытие меню при клике вне его
+                mobileMenu.addEventListener('click', (e) => {
+                    if (e.target === mobileMenu) {
+                        closeMobileMenu();
+                    }
+                });
+            }
+
+            // Модальное окно заказа звонка
+            const orderCallBtn = document.getElementById('orderCallBtn');
+            const footerOrderCallBtn = document.getElementById('footerOrderCallBtn');
+            const orderCallModal = document.getElementById('orderCallModal');
+            const modalClose = document.getElementById('modalClose');
+            const orderForm = document.getElementById('orderForm');
+
+            // Модальное окно реквизитов
+            const showRequisitesBtn = document.getElementById('showRequisitesBtn');
+            const navRequisitesBtn = document.getElementById('navRequisitesBtn');
+            const requisitesModal = document.getElementById('requisitesModal');
+            const requisitesModalClose = document.getElementById('requisitesModalClose');
+
+            // Открытие модального окна заказа звонка из футера
+            if (footerOrderCallBtn) {
+                footerOrderCallBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    orderCallModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+
+            // Открытие модального окна реквизитов из навигации
+            if (navRequisitesBtn) {
+                navRequisitesBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    requisitesModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+
+            // Закрытие модального окна заказа звонка
+            if (modalClose) {
+                modalClose.addEventListener('click', () => {
+                    orderCallModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            }
+
+            // Закрытие модального окна реквизитов
+            if (requisitesModalClose) {
+                requisitesModalClose.addEventListener('click', () => {
+                    requisitesModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            }
+
+            // Закрытие при клике вне модального окна заказа звонка
+            if (orderCallModal) {
+                orderCallModal.addEventListener('click', (e) => {
+                    if (e.target === orderCallModal) {
+                        orderCallModal.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+
+            // Закрытие при клике вне модального окна реквизитов
+            if (requisitesModal) {
+                requisitesModal.addEventListener('click', (e) => {
+                    if (e.target === requisitesModal) {
+                        requisitesModal.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+
+            // Обработка формы
+            if (orderForm) {
+                orderForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const formData = new FormData(orderForm);
+                    
+                    console.log('Order call form:', {
+                        name: formData.get('name'),
+                        phone: formData.get('phone'),
+                        reason: formData.get('reason')
+                    });
+                    
+                    // Здесь будет логика отправки формы
+                    alert('Заявка принята! Мы вам перезвоним.');
+                    
+                    // Закрываем модальное окно
+                    orderCallModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                    
+                    // Очищаем форму
+                    orderForm.reset();
+                });
+            }
+
+            // Прокручиваем к началу страницы после загрузки DOM
+            document.addEventListener('DOMContentLoaded', function() {
+                window.scrollTo(0, 0);
+                document.documentElement.scrollTop = 0;
+                document.body.scrollTop = 0;
+                
+                // Дополнительная прокрутка через небольшую задержку
+                setTimeout(function() {
+                    window.scrollTo(0, 0);
+                    document.documentElement.scrollTop = 0;
+                    document.body.scrollTop = 0;
+                }, 100);
+            });
+            
+            // Логика для панели услуг
+            const sidebar = document.getElementById('servicesSidebar');
+            const serviceItems = document.querySelectorAll('.service-item');
+            const serviceSections = document.querySelectorAll('.service-section');
+            const servicesContent = document.querySelector('.services-content');
+            const footer = document.querySelector('.footer');
+            
+            // Переменные для выпадающих меню
+            const allDropdowns = document.querySelectorAll('.nav-item.dropdown');
+            
+            // Переменные для управления таймерами
+            let autoHideTimer = null;
+            let isMouseOverSidebar = false;
+
+            // Функция для скрытия панели
+            function hideSidebar() {
+                sidebar.classList.add('collapsed');
+                servicesContent.style.marginLeft = '0';
+            }
+            
+            // Функция для автозакрытия с проверкой курсора
+            function startAutoHide() {
+                // Очищаем предыдущий таймер
+                if (autoHideTimer) {
+                    clearTimeout(autoHideTimer);
+                }
+                
+                // Устанавливаем новый таймер
+                autoHideTimer = setTimeout(() => {
+                    // Проверяем, не находится ли курсор над панелью
+                    if (!isMouseOverSidebar) {
+                        hideSidebar();
+                    }
+                }, 1500);
+            }
+
+            // Функция для показа панели
+            function showSidebar() {
+                sidebar.classList.remove('collapsed');
+                servicesContent.style.marginLeft = '350px';
+            }
+
+            // Показываем панель при наведении
+            sidebar.addEventListener('mouseenter', () => {
+                isMouseOverSidebar = true;
+                showSidebar();
+                // Очищаем таймер автозакрытия
+                if (autoHideTimer) {
+                    clearTimeout(autoHideTimer);
+                    autoHideTimer = null;
+                }
+            });
+
+            // Скрываем панель при уходе мыши
+            sidebar.addEventListener('mouseleave', () => {
+                isMouseOverSidebar = false;
+                hideSidebar();
+            });
+
+            // Переключение между услугами
+            serviceItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const serviceId = item.getAttribute('data-service');
+
+                    // Скрываем все выпадающие меню
+                    allDropdowns.forEach(dropdown => {
+                        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+                        if (dropdownMenu) {
+                            dropdownMenu.style.display = 'none';
+                        }
+                    });
+
+                    // Убираем активный класс у всех элементов
+                    serviceItems.forEach(i => i.classList.remove('active'));
+                    serviceSections.forEach(s => s.classList.remove('active'));
+
+                    // Добавляем активный класс к выбранному элементу
+                    item.classList.add('active');
+                    document.getElementById(serviceId).classList.add('active');
+
+                    // Показываем панель
+                    showSidebar();
+
+                    // Автозакрытие панели через 1.5 секунды
+                    startAutoHide();
+                });
+            });
+
+            // Обработка перехода с якоря из навигации
+            function handleAnchorNavigation() {
+                // Сначала прокручиваем к началу страницы
+                window.scrollTo(0, 0);
+                document.documentElement.scrollTop = 0;
+                document.body.scrollTop = 0;
+
+                // Скрываем все выпадающие меню
+                allDropdowns.forEach(dropdown => {
+                    const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+                    if (dropdownMenu) {
+                        dropdownMenu.style.display = 'none';
+                    }
+                });
+
+                const hash = window.location.hash;
+                if (hash) {
+                    const serviceId = hash.substring(1); // Убираем #
+                    const targetItem = document.querySelector(`[data-service="${serviceId}"]`);
+                    const targetSection = document.getElementById(serviceId);
+
+                    if (targetItem && targetSection) {
+                        // Убираем активный класс у всех элементов
+                        serviceItems.forEach(i => i.classList.remove('active'));
+                        serviceSections.forEach(s => s.classList.remove('active'));
+
+                        // Добавляем активный класс к целевому элементу
+                        targetItem.classList.add('active');
+                        targetSection.classList.add('active');
+
+                        // Показываем панель
+                        showSidebar();
+
+                        // Автозакрытие панели через 1.5 секунды
+                        startAutoHide();
+
+                        // Дополнительная прокрутка к началу страницы
+                        setTimeout(function() {
+                            window.scrollTo(0, 0);
+                            document.documentElement.scrollTop = 0;
+                            document.body.scrollTop = 0;
+                        }, 200);
+                    }
+                }
+            }
+
+            // Обрабатываем якорь при загрузке страницы
+            handleAnchorNavigation();
+            
+            // Обрабатываем изменения якоря
+            window.addEventListener('hashchange', handleAnchorNavigation);
+            
+            // Скрываем все выпадающие меню при загрузке страницы услуг
+            allDropdowns.forEach(dropdown => {
+                const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+                if (dropdownMenu) {
+                    dropdownMenu.style.display = 'none';
+                }
+            });
+
+            // Обработчик для клика на кнопку "Наши услуги"
+            const servicesNavLink = document.querySelector('.nav-link[href="services.html"]');
+            if (servicesNavLink) {
+                servicesNavLink.addEventListener('click', (e) => {
+                    // Скрываем все выпадающие меню при клике на "Наши услуги"
+                    allDropdowns.forEach(dropdown => {
+                        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+                        if (dropdownMenu) {
+                            dropdownMenu.style.display = 'none';
+                        }
+                    });
+                });
+            }
+
+            // Обработчик для мобильной кнопки "Наши услуги"
+            const mobileServicesNavLink = document.querySelector('.mobile-nav-link[href="services.html"]');
+            if (mobileServicesNavLink) {
+                mobileServicesNavLink.addEventListener('click', (e) => {
+                    // Скрываем все выпадающие меню при клике на "Наши услуги"
+                    allDropdowns.forEach(dropdown => {
+                        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+                        if (dropdownMenu) {
+                            dropdownMenu.style.display = 'none';
+                        }
+                    });
+                });
+            }
+
+            // Обработчики для всех выпадающих меню (десктоп)
+            allDropdowns.forEach(dropdown => {
+                dropdown.addEventListener('mouseenter', () => {
+                    const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+                    if (dropdownMenu) {
+                        dropdownMenu.style.display = 'block';
+                    }
+                });
+                
+                dropdown.addEventListener('mouseleave', () => {
+                    const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+                    if (dropdownMenu) {
+                        dropdownMenu.style.display = 'none';
+                    }
+                });
+            });
+
+            // Обработчики для выпадающего меню в навигации (десктоп)
+            const dropdownLinks = document.querySelectorAll('.dropdown-link');
+            dropdownLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const href = link.getAttribute('href');
+                    
+                    // Скрываем все выпадающие меню
+                    allDropdowns.forEach(dropdown => {
+                        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+                        if (dropdownMenu) {
+                            dropdownMenu.style.display = 'none';
+                        }
+                    });
+                    
+                    if (href.startsWith('#')) {
+                        const serviceId = href.substring(1);
+                        const targetItem = document.querySelector(`[data-service="${serviceId}"]`);
+                        const targetSection = document.getElementById(serviceId);
+                        
+                        if (targetItem && targetSection) {
+                            // Убираем активный класс у всех элементов
+                            serviceItems.forEach(i => i.classList.remove('active'));
+                            serviceSections.forEach(s => s.classList.remove('active'));
+                            
+                            // Добавляем активный класс к целевому элементу
+                            targetItem.classList.add('active');
+                            targetSection.classList.add('active');
+                            
+                        // Показываем панель
+                        showSidebar();
+                        
+                        // Автозакрытие панели через 1.5 секунды
+                        startAutoHide();
+
+                        // Обновляем URL без перезагрузки страницы
+                        window.history.pushState(null, null, href);
+                        }
+                    }
+                });
+            });
+
+            // Обработчики для мобильного выпадающего меню
+            const mobileDropdownLinks = document.querySelectorAll('.mobile-dropdown-link');
+            mobileDropdownLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const href = link.getAttribute('href');
+                    
+                    // Закрываем мобильное меню
+                    if (typeof closeMobileMenu === 'function') {
+                        closeMobileMenu();
+                    }
+                    
+                    // Скрываем все выпадающие меню
+                    allDropdowns.forEach(dropdown => {
+                        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+                        if (dropdownMenu) {
+                            dropdownMenu.style.display = 'none';
+                        }
+                    });
+                    
+                    if (href.startsWith('#')) {
+                        const serviceId = href.substring(1);
+                        const targetItem = document.querySelector(`[data-service="${serviceId}"]`);
+                        const targetSection = document.getElementById(serviceId);
+                        
+                        if (targetItem && targetSection) {
+                            // Убираем активный класс у всех элементов
+                            serviceItems.forEach(i => i.classList.remove('active'));
+                            serviceSections.forEach(s => s.classList.remove('active'));
+                            
+                            // Добавляем активный класс к целевому элементу
+                            targetItem.classList.add('active');
+                            targetSection.classList.add('active');
+                            
+                        // Показываем панель
+                        showSidebar();
+                        
+                        // Автозакрытие панели через 1.5 секунды
+                        startAutoHide();
+
+                        // Обновляем URL без перезагрузки страницы
+                        window.history.pushState(null, null, href);
+                        }
+                    }
+                });
+            });
+
+            
+            // Функция для обновления высоты панели при скролле
+            function updateSidebarHeight() {
+                if (footer) {
+                    const footerTop = footer.offsetTop;
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const windowHeight = window.innerHeight;
+                    const sidebarTop = 120; // Фиксированная позиция панели
+                    
+                    // Вычисляем максимальную высоту панели
+                    const maxHeightFromFooter = footerTop - (sidebarTop + scrollTop);
+                    const maxHeightFromViewport = windowHeight - 120;
+                    
+                    // Берем минимальное значение
+                    const maxHeight = Math.min(maxHeightFromFooter, maxHeightFromViewport);
+                    
+                    if (maxHeight > 0) {
+                        sidebar.style.maxHeight = maxHeight + 'px';
+                    } else {
+                        sidebar.style.maxHeight = '0px';
+                    }
+                }
+            }
+
+            // Обработчик скролла
+            window.addEventListener('scroll', updateSidebarHeight);
+            
+            // Обновляем высоту при изменении размера окна
+            window.addEventListener('resize', updateSidebarHeight);
+            
+            // Показываем панель при загрузке страницы
+            // Сначала сдвигаем контент вправо
+            servicesContent.style.marginLeft = '350px';
+
+            // Обновляем высоту панели при загрузке
+            updateSidebarHeight();
+
+            // Автозакрытие панели через 1.5 секунды при загрузке страницы
+            startAutoHide();
+        });
+    </script>
+</body>
+</html>
