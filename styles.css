@@ -1567,6 +1567,24 @@ body.dark-theme .mobile-dropdown-link:hover {
     display: none !important;
 }
 
+/* Поля администратора */
+.admin-field {
+    transition: all 0.3s ease;
+    opacity: 1;
+    max-height: 100px;
+    margin: 15px 0;
+    padding: 0;
+}
+
+.admin-field.hidden {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    display: block !important; /* Переопределяем display: none */
+}
+
 /* Современные минималистичные анимации */
 @keyframes fadeIn {
     0% {
@@ -2515,6 +2533,15 @@ body.dark-theme .photo-placeholder svg {
 .document-preview iframe {
     width: 100%;
     height: 100%;
+    border: none;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.document-preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border: none;
     pointer-events: none;
     overflow: hidden;

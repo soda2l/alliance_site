@@ -140,6 +140,11 @@
                             <label for="loginPassword">Пароль</label>
                             <input type="password" id="loginPassword" name="password" required>
                         </div>
+                        <!-- Поля для администратора -->
+                        <div class="form-group admin-field hidden" id="adminCodeField">
+                            <label for="adminCode">Код администратора</label>
+                            <input type="text" id="adminCode" name="adminCode" placeholder="Введите код доступа">
+                        </div>
                         <div class="form-options">
                             <label class="checkbox-container">
                                 <input type="checkbox" id="rememberMe">
@@ -168,6 +173,15 @@
                         <div class="form-group">
                             <label for="confirmPassword">Подтвердите пароль</label>
                             <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        </div>
+                        <!-- Поля для администратора -->
+                        <div class="form-group admin-field hidden" id="adminPositionField">
+                            <label for="adminPosition">Должность</label>
+                            <input type="text" id="adminPosition" name="adminPosition" placeholder="Введите должность">
+                        </div>
+                        <div class="form-group admin-field hidden" id="adminAccessCodeField">
+                            <label for="adminAccessCode">Код доступа администратора</label>
+                            <input type="text" id="adminAccessCode" name="adminAccessCode" placeholder="Введите код доступа">
                         </div>
                         <div class="form-options">
                             <label class="checkbox-container">
@@ -261,6 +275,7 @@
         
         // Переключение темы
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM загружен, инициализируем функциональность личного кабинета');
             const themeToggle = document.getElementById('themeToggle');
             const mobileThemeToggle = document.getElementById('mobileThemeToggle');
             const body = document.body;
@@ -423,12 +438,23 @@
 
             // Переключение типа пользователя
             const toggleButtons = document.querySelectorAll('.toggle-btn');
-            toggleButtons.forEach(button => {
+            console.log('Найдено кнопок переключения:', toggleButtons.length);
+            
+            // Инициализируем форму при загрузке
+            const initialUserType = document.querySelector('.toggle-btn.active').dataset.type;
+            console.log('Инициализируем с типом пользователя:', initialUserType);
+            updateFormForUserType(initialUserType);
+            
+            toggleButtons.forEach((button, index) => {
+                console.log(`Кнопка ${index}:`, button.textContent, 'data-type:', button.dataset.type);
                 button.addEventListener('click', () => {
+                    console.log('Клик по кнопке:', button.textContent, 'тип:', button.dataset.type);
+                    
                     toggleButtons.forEach(btn => btn.classList.remove('active'));
                     button.classList.add('active');
                     
                     const userType = button.dataset.type;
+                    console.log('Вызываем updateFormForUserType с типом:', userType);
                     updateFormForUserType(userType);
                 });
             });
@@ -446,19 +472,23 @@
                 e.preventDefault();
                 isLoginMode = !isLoginMode;
                 
+                // Получаем текущий тип пользователя
+                const currentUserType = document.querySelector('.toggle-btn.active').dataset.type;
+                
                 if (isLoginMode) {
                     loginForm.classList.remove('hidden');
                     registerForm.classList.add('hidden');
                     authTitle.textContent = 'Вход в систему';
-                    authSubtitle.textContent = 'Войдите в свой аккаунт';
                     switchBtn.textContent = 'Зарегистрироваться';
                 } else {
                     loginForm.classList.add('hidden');
                     registerForm.classList.remove('hidden');
                     authTitle.textContent = 'Регистрация';
-                    authSubtitle.textContent = 'Создайте новый аккаунт';
                     switchBtn.textContent = 'Войти';
                 }
+                
+                // Обновляем форму в зависимости от типа пользователя
+                updateFormForUserType(currentUserType);
             });
 
             // Обработка форм
@@ -500,18 +530,59 @@
             });
 
             function updateFormForUserType(userType) {
+                console.log('updateFormForUserType вызвана с типом:', userType, 'isLoginMode:', isLoginMode);
+                
+                // Получаем поля администратора
+                const adminCodeField = document.getElementById('adminCodeField');
+                const adminPositionField = document.getElementById('adminPositionField');
+                const adminAccessCodeField = document.getElementById('adminAccessCodeField');
+                
+                console.log('Найденные поля:', {
+                    adminCodeField: !!adminCodeField,
+                    adminPositionField: !!adminPositionField,
+                    adminAccessCodeField: !!adminAccessCodeField
+                });
+                
                 // Обновляем текст в зависимости от типа пользователя
                 if (userType === 'admin') {
                     if (isLoginMode) {
                         authSubtitle.textContent = 'Войдите в панель администратора';
+                        // Показываем поле кода администратора для входа
+                        if (adminCodeField) {
+                            adminCodeField.classList.remove('hidden');
+                            console.log('Показываем поле кода администратора');
+                        }
                     } else {
                         authSubtitle.textContent = 'Создайте аккаунт администратора';
+                        // Показываем поля администратора для регистрации
+                        if (adminPositionField) {
+                            adminPositionField.classList.remove('hidden');
+                            console.log('Показываем поле должности');
+                        }
+                        if (adminAccessCodeField) {
+                            adminAccessCodeField.classList.remove('hidden');
+                            console.log('Показываем поле кода доступа');
+                        }
                     }
                 } else {
                     if (isLoginMode) {
                         authSubtitle.textContent = 'Войдите в свой аккаунт';
+                        // Скрываем поле кода администратора для обычного пользователя
+                        if (adminCodeField) {
+                            adminCodeField.classList.add('hidden');
+                            console.log('Скрываем поле кода администратора');
+                        }
                     } else {
                         authSubtitle.textContent = 'Создайте новый аккаунт';
+                        // Скрываем поля администратора для обычного пользователя
+                        if (adminPositionField) {
+                            adminPositionField.classList.add('hidden');
+                            console.log('Скрываем поле должности');
+                        }
+                        if (adminAccessCodeField) {
+                            adminAccessCodeField.classList.add('hidden');
+                            console.log('Скрываем поле кода доступа');
+                        }
                     }
                 }
             }
